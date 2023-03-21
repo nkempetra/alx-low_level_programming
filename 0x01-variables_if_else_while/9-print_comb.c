@@ -1,21 +1,22 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 int main(void)
 {
-    int x = 48;
 
-    while (x < 58)
-    {
-        putchar(x);
-        if (x < 57)
-        {
-            putchar(44);
-            putchar(32);
-        }
-        x++;
-    }
-    putchar('\n');
+	int num;
 
-    return (0);
+	for (num = 0; num <= 9; num++)
+	{
+		putchar(num + '0');
+		if (num != 9)
+		{
+			putchar(',');
+			putchar(' ');
+		}
+	}
+
+putchar('\n');
+
+return (0);
 }
-

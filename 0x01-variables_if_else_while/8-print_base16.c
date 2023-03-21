@@ -1,12 +1,16 @@
 #include <stdio.h>
-main()
+#include <stdlib.h>
+int main(void)
 {
+	char character;
 	int num;
-char ab;
-for (num = 0; num < 10; num++)
-putchar((num % 10) + '0');
-for (ab = 'a'; ab <= 'f'; ab++)
-putchar(ab);
-putchar('\n');
-return (0);
+
+	for (num = 0; num <= 9; num++)
+		putchar(num + '0');
+	for (character = 'a'; character <= 'f'; character++)
+	{
+		putchar(character);
+	}
+	putchar('\n');
+	return (0);
 }

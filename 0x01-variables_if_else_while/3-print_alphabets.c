@@ -1,15 +1,20 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
 int main(void)
 {
-char ab, AB;
-for (ab = 'a'; ab <= 'z'; ab++)
-{
-putchar(ab);
-}
-for (AB = 'A'; AB <= 'Z'; AB++)
-{
-putchar(AB);
-}
-putchar('\n');
-return (0);
+	char letter;
+
+	for (letter = 'a'; letter <= 'z'; ++letter)
+	{
+		putchar(letter);
+	}
+	for (letter = 'A'; letter <= 'Z'; ++letter)
+	{
+		putchar(letter);
+	}
+	putchar('\n');
+
+	return (0);
 }
