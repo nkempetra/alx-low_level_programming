@@ -1,14 +1,15 @@
 #include <stdio.h>
-#include <stdlib.h>
-
+/**
+*main - Prints all string from 0 to 9
+*Return: always 0
+*/
 int main(void)
 {
-	char num;
-
-	for (num = 0; num <= 9; num++)
-	{
-		printf("%d", num);
-	}
-	putchar('\n');
-	return (0);
+int num;
+for (num = 0; num < 10; num++)
+{
+printf("%d", num);
+}
+printf("\n");
+return (0);
 }
