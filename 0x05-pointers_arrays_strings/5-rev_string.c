@@ -1,46 +1,44 @@
-include "main.h"
+#include "main.h"
 /**
-*rev_string - Reverse a string
-*@s: String to reverse
-*Return: Nothing
-*/
+ * rev_string - prints a reverse string
+ *@s: A pointer to an int that will be changed
+ *
+ *Return: void
+ */
+
 void rev_string(char *s)
 {
-int i = 0, length;
-length = _strlen(s) - 1;
-while (length > i)
-{
-swap_char(s + length, s + i);
-i++;
-length--;
-}
-}
+char *start_c, *end_c, c;
+int i, count;
+int length = 0;
 
-/**
- *_strlen - returns the length of a string
- * @s: string
- *Return: returns lenght;
- */
-int _strlen(char *s)
+for (i = 0; s[i]; i++)
 {
-int count, inc;
-inc = 0;
-for (count = 0; s[count] != '\0'; count++)
-inc++;
-
-return (inc);
+length++;
 }
 
-/**
-*swap_char - swap two characters
-*@a: first character
-*@b: second character
-*Return: nothing
-*/
+count = length;
 
-void swap_char(char *a, char *b)
+start_c = s;
+end_c = s;
+
+
+for (i = 0; i < count - 1; i++)
 {
-char tmp = *a;
-*a = *b;
-*b = tmp;
+end_c++;
+}
+
+
+for (i = 0; i < count / 2; i++)
+{
+
+
+c = *end_c;
+*end_c = *start_c;
+*start_c = c;
+
+
+start_c++;
+end_c--;
+}
 }
