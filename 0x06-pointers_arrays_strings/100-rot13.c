@@ -1,44 +1,34 @@
 #include "main.h"
-
 /**
-* rot13 -  encodes a string using rot13
-* @str:the string targeted
-*Return: returns the encoded string
-*/
-
-char *rot13(char *str)
+ *rot13 - encodes strings using rot13.
+ *@s: pointer to string.
+ *
+ *Return: pointer to encoded string.
+ */
+char *rot13(char *s)
 {
-	int index1, index2;
+	int stringCount, rotation;
+	char r1[] = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l',
+		     'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y',
+		     'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L',
+		     'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y',
+		     'Z'};
+	char r2[] = {'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y',
+		     'z', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l',
+		     'm', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y',
+		     'Z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L',
+		     'M'};
 
-	char alphabet[52] = {'A', 'B', 'C', 'D', 'E', 'F',
-											 'G', 'H', 'I', 'J', 'K', 'L',
-											 'M', 'N', 'O', 'P', 'Q', 'R',
-											 'S', 'T', 'U', 'V', 'W', 'X',
-											 'Y', 'Z', 'a', 'b', 'c', 'd',
-											 'e', 'f', 'g', 'h', 'i', 'j',
-											 'k', 'l', 'm', 'n', 'o', 'p',
-											 'q', 'r', 's', 't', 'u', 'v',
-											 'w', 'x', 'y', 'z'};
-
-	char rot13key[52] = {'N', 'O', 'P', 'Q', 'R', 'S',
-											 'T', 'U', 'V', 'W', 'X', 'Y',
-											 'Z', 'A', 'B', 'C', 'D', 'E',
-											 'F', 'G', 'H', 'I', 'J', 'K',
-											 'L', 'M', 'n', 'o', 'p', 'q',
-											 'r', 's', 't', 'u', 'v', 'w',
-											 'x', 'y', 'z', 'a', 'b', 'c',
-											 'd', 'e', 'f', 'g', 'h', 'i',
-											 'j', 'k', 'l', 'm'};
-	while (str[++index1])
+	for (stringCount = 0; s[stringCount] != '\0'; stringCount++)
 	{
-		for (index2 = 0; index2 < 52; index2++)
+		for (rotation = 0; rotation < 53; rotation++)
 		{
-			if (str[index1] == alphabet[index2])
+			if (r1[rotation] == s[stringCount])
 			{
-				str[index1] = rot13key[index2];
+				s[stringCount] = r2[rotation];
 				break;
 			}
 		}
 	}
-	return (str);
+	return (s);
 }
