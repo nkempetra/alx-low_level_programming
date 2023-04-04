@@ -8,12 +8,12 @@
  * Return: Nothing.
  */
 
-char *_memset(char *s, char b, unsigned int n);
+char *_memset(char *s, char b, unsigned int n)
 {
-        unsigned int c;
-        for(c = 0, c < n, i++);
+        while (n)
         {
-                s[c] = b;
+                s[n-1] = b;
+                n--;
         }
-        return (s);
+        return(s);
 }
