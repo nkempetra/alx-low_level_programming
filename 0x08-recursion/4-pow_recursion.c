@@ -1,11 +1,12 @@
 #include "main.h"
 
-/*
- * int _pow_recursion - implementation of exponentiation by recursion
- * @x: the number to be raised to power y
- * @y: the power number of x
- * Return: the value of x raised to power y
- */
+/**
+* _pow_recursion - function that returns the
+* value of x raised to the power of y
+*@x: the base
+*@y: the exponent
+*Return: the value of x raised to the power of y
+*/
 
 int _pow_recursion(int x, int y)
 {
