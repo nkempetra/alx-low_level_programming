@@ -17,9 +17,9 @@ int _sqrt_recursion(int n)
 		return(1);
 	}
 
-	int i = 1, result = 1;
+	int i = 1;
 
-	while (result <= n)
+	while (i <= n)
 	{
 		i++;
 		result = i * i;
