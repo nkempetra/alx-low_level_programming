@@ -19,7 +19,7 @@ int _sqrt_recursion(int n)
 		return (_recursion_sqrt(n, 0));
 }
 /**
- * calculate_square - calculate square
+ * _recursion_sqrt - calculate square
  *
  * @n: integer
  * @i: integer
