@@ -21,6 +21,6 @@ int is_prime(int n, int start);
 int find_strlen(char *s);
 int check_palindrome(char *s, int len, int index);
 int calculate_square;
-int _recursion_sqrt (int n, int i)
+int _recursion_sqrt (int n, int i);
 
 #endif /* MAIN_H */
