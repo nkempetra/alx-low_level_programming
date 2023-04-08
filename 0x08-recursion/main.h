@@ -22,5 +22,6 @@ int find_strlen(char *s);
 int check_palindrome(char *s, int len, int index);
 int calculate_square;
 int _recursion_sqrt (int n, int i);
+int prime_number(int n, int m);
 
 #endif /* MAIN_H */
