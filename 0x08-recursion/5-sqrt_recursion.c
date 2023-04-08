@@ -7,7 +7,7 @@
  * Return: the square root of n
  */
 
-int _sqrt_recursion(int n);
+int _sqrt_recursion(int n)
 {
 	if (n == 0 || n == 1)
 		return (n);
@@ -22,7 +22,7 @@ int _sqrt_recursion(int n);
  * Return: the square root of n
  */
 
-int sqrt_recursion(int n, int m);
+int sqrt_recursion(int n, int m)
 {
 	if (n > m / 2)
 		return (-1);
