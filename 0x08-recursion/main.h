@@ -23,5 +23,6 @@ int check_palindrome(char *s, int len, int index);
 int calculate_square;
 int _recursion_sqrt (int n, int i);
 int prime_number(int n, int m);
+int sqrt_recursion(int n, int m);
 
 #endif /* MAIN_H */
