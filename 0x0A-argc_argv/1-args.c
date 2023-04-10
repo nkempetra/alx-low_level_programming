@@ -1,4 +1,3 @@
-explain extensively
 #include <stdio.h>
 #include "main.h"
 
