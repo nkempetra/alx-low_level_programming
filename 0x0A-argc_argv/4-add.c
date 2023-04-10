@@ -22,6 +22,17 @@ int main(int argc, char* argv[])
 	{
 		for (i = 1; i < argc; i++)
 		{
+			for (int j = 0; argv[i][j] != '\0'; j++) 
+			{
+				if (argv[i][j] < '0' || argv[i][j] > '9')
+				{
+					printf("Error\n");
+					return 1;
+				}
+                        }
+                }
+
+		{
 			x = strtol(argv[i], NULL, 10);
 			add = add + x;
 		       
