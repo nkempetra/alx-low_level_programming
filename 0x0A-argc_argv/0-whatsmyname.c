@@ -1,4 +1,4 @@
-#include <stdlib.h>
+#include "main.h"
 #include <stdio.h>
 
 /**
@@ -6,11 +6,12 @@
  * @argc: number of arguments passed to the program.
  * @argv: an array of strings representing the arguments.
  *
- * return: 0
+ * return: 0 always
  */
 
-int main(int argc, char *argv[])
+int main(int argc, char **argv)
 {
+	(void) argc;
 	printf("%s\n", argv[0]);
 	return 0;
 }
