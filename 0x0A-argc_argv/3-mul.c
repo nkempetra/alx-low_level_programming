@@ -8,23 +8,24 @@
  * Return: 0.  
  */
 
-int main(int argc, char* argv[])
+int main(int argc, char *argv[])
 {
-	int mul = 1;
 	int i, x;
 
-	if (argc < 2)
+	if (argc == 1 || argc == 2)
 	{
 		printf("Error\n");
-		return 1;
+		return (1);
 	}
-
-	for (i = 1; i < argc; i++) 
+	else
 	{
-		x = strtol(argv[i], NULL, 10);
-		mul *= x;
-	}
-	printf("%d\n", mul);
+		x = 1;
 
-	return 0;
+		for (i = 1; i < 3; i++)
+		x *= atoi(argv[i]);
+
+		printf("%d\n", x);
+	}
+
+	return (0);
 }
