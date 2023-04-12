@@ -4,7 +4,6 @@
  * main - print name of program.
  * @argc: number of arguments passed to the program.
  * @argv: an array of strings representing the arguments.
- *
  * return: 0 always
  */
 
