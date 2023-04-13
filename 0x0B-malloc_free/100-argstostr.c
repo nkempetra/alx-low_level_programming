@@ -7,12 +7,12 @@
  * @av: An array of pointers to the arguments.
  *
  * Return: If ac == 0, av == NULL, or the function fails - NULL.
- *         Otherwise - a pointer to the new string.
+ * Otherwise - a pointer to the new string.
  */
 
 char *argstostr(int ac, char **av) 
 {
-	int tl, i, 
+	int tl, i;
 	if (ac == 0 || av == NULL) 
 	{
 		return NULL;
@@ -22,9 +22,11 @@ char *argstostr(int ac, char **av)
 	{
 		tl += strlen(av[i]) + 1;
 	}
-	char str = (char)malloc(tl);
+	
+	str = (char)malloc(tl);
+	
 	int position = 0;
-	for(int i=0;i<ac;i++)
+	for(int i = 0; i < ac; i++)
 	{
 		int length = strlen(av[i]);
 		memcpy(str+position,av[i],length);
