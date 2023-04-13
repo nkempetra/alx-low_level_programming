@@ -6,11 +6,9 @@
  * Return: pointer to the newly allocated space, or NULL if error
  */
 
-(char **str_concat(char *s1, char *s2)).
-
-char *str_concat(char *s1, char *s2)
+char **str_concat(char *s1, char *s2)
 {
-	char *cal;
+char cal;	
 	int len1, len2;
 
 	if (s1 == NULL)
@@ -21,9 +19,9 @@ char *str_concat(char *s1, char *s2)
 	len1 = strlen(s1);
 	len2 = strlen(s2);
 
-	*cal = (char *)malloc(len1 + len2 + 1);
+	*cal = malloc(len1 + len2 + 1);
 	if (cal == NULL)
-		return NULL;
+		return (NULL);
 
 	strcpy(cal, s1);
 	strcat(cal, s2);
