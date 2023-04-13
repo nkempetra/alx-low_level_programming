@@ -1,11 +1,12 @@
 #include "main.h"
 
 /**
- * *create_array - returns a pointer to the newly created array.
+ * create_array - returns a pointer to the newly created array.
  * @size: size of array
  * @c: character to input
  *
- * return: NULL if size = 0/fails or pointer to array if success
+ * Return: NULL if size is zero or if it fails,
+ * pointer to array if everything is normal.
  */
 
 char *create_array(unsigned int size, char c)
