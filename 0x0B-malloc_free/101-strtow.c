@@ -6,7 +6,7 @@
  * Return: pointer to the array of splitted words
  */
 
-char **split_strtow(char *str)
+char **strtow(char *str)
 {
 	char **split;
 	int i, j = 0, temp = 0, size = 0, words = count_words(str);
