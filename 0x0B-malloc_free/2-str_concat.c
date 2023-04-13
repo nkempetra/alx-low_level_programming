@@ -1,8 +1,9 @@
 #include "main.h"
 
 /**
- * _strdup - allocates memory for a copy of a given string 
- * @str: the string to be copied
+ * str_concat - allocates memory for a copy of a given string 
+ * @s1: string
+ * @s2: sring
  * Return: pointer to the newly allocated space, or NULL if error
  */
 
