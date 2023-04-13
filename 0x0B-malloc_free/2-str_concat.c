@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * str_concat - allocates memory for a copy of a given string 
+ * str_concat - allocates memory for a copy of a given string
  * @s1: string
  * @s2: sring
  * Return: pointer to the newly allocated space, or NULL if error
