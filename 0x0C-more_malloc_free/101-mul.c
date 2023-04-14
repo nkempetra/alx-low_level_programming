@@ -36,7 +36,7 @@ char *create_xarray(int size)
 	if (arr == NULL)
 		exit(98);
 
-	for (i = 0; i < (size - 1); i)
+	for (i = 0; i < (size - 1); i++)
 		arr[i] = 'x';
 
 	arr[i] = '\0';
@@ -94,7 +94,7 @@ void get_prod(char *prod, char *mult, int digit, int zeroes)
 {
 	int mult_len, num, tens = 0;
 
-	mult_len = find_len(mult) - 1;
+	mult_len = find_len(mult);
 	mult += mult_len;
 
 	while (*prod)
@@ -111,7 +111,7 @@ void get_prod(char *prod, char *mult, int digit, int zeroes)
 		prod--;
 	}
 
-	for (; mult_len >= 0; mult_len--, mult--, prod--)
+	for (; mult != 0; mult_len--, mult--, prod--)
 	{
 		if (*mult < '0' || *mult > '9')
 		{
@@ -156,7 +156,7 @@ void add_nums(char *final_prod, char *next_prod, int next_len)
 		next_len--;
 	}
 
-	for (; next_len >= 0 && *next_prod != 'x'; next_len--)
+	for (; next_len >= 0 && *next_prod != 'x';)
 	{
 		num = (*next_prod - '0');
 		num += tens;
@@ -191,11 +191,11 @@ int main(int argc, char *argv[])
 		exit(98);
 	}
 
-	if (*(argv[1]) == '0')
+	if (*argv[1] == '0')
 		argv[1] = iterate_zeroes(argv[1]);
-	if (*(argv[2]) == '0')
+	if (*argv[2] == '0')
 		argv[2] = iterate_zeroes(argv[2]);
-	if (*(argv[1]) == '\0' || *(argv[2]) == '\0')
+	if (*argv[1] == '\0' || *argv[2] == '\0')
 	{
 		printf("0\n");
 		return (0);
@@ -209,7 +209,7 @@ int main(int argc, char *argv[])
 	{
 		digit = get_digit(*(argv[2] + index));
 		get_prod(next_prod, argv[1], digit, zeroes++);
-		add_nums(final_prod, next_prod, size - 1);
+		add_nums(final_prod, next_prod, size);
 	}
 	for (index = 0; final_prod[index]; index++)
 	{
