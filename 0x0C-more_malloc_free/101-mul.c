@@ -36,7 +36,7 @@ char *create_xarray(int size)
 	if (arr == NULL)
 		exit(98);
 
-	for (i = 0; i < (size - 1); i++)
+	for (i = 0; i < (size); i++)
 		arr[i] = 'x';
 
 	arr[i] = '\0';
@@ -111,7 +111,7 @@ void get_prod(char *prod, char *mult, int digit, int zeroes)
 		prod--;
 	}
 
-	for (; mult != 0; mult_len--, mult--, prod--)
+	for (; mult_len != 0; mult_len--, mult--, prod--)
 	{
 		if (*mult < '0' || *mult > '9')
 		{
@@ -156,7 +156,7 @@ void add_nums(char *final_prod, char *next_prod, int next_len)
 		next_len--;
 	}
 
-	for (; next_len >= 0 && *next_prod != 'x';)
+	for (; next_len > 0 && *next_prod != 'x'; next_len--)
 	{
 		num = (*next_prod - '0');
 		num += tens;
@@ -183,7 +183,8 @@ void add_nums(char *final_prod, char *next_prod, int next_len)
 int main(int argc, char *argv[])
 {
 	char *final_prod, *next_prod;
-	int size, index, digit, zeroes = 0;
+	int size, digit, zeroes = 0;
+	size_t index;
 
 	if (argc != 3)
 	{
