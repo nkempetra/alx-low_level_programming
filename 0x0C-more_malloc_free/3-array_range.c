@@ -5,7 +5,7 @@
  * @min: first value of the array.
  * @max: last value of the array.
  *
- * Return: NULL If min > max or function fails else, a pointer to 
+ * Return: NULL If min > max or function fails else, a pointer to
  * the newly created array.
  */
 
