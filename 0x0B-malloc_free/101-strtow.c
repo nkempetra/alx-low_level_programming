@@ -1,8 +1,8 @@
 #include "main.h"
 
 /**
- * split_string - splits a string into words
- * *@s: string to be splitted
+ * strtow - splits a string into words
+ * @s: string that will be splitted
  * Return: pointer to the array of splitted words
  */
 
@@ -27,7 +27,7 @@ char **strtow(char *str)
 				{
 					while (temp < size)
 					{
-						split[j][temp] = str[(i - size) +temp];
+						split[j][temp] = str[(i - size) + temp];
 						temp++;
 					}
 					split[j][temp] = '\0';
