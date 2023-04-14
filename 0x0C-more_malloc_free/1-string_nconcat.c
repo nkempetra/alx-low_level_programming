@@ -6,7 +6,7 @@
  * @s2: Second string.
  * @n: The maximum number of bytes of s2 to concatenate to s1.
  *
- * Return: NULL if fail otherwise - a pointer to 
+ * Return: NULL if fail otherwise - a pointer to
  * the concatenated space in memory.
  */
 
