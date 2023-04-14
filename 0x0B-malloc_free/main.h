@@ -6,6 +6,7 @@
 #include <string.h>
 
 char **strtow(char *str);
+int len(char *str);
 int _putchar(char c);
 int count_words(char *str);
 char *create_array(unsigned int size, char c);
