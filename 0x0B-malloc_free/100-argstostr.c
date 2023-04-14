@@ -10,40 +10,50 @@
  * Otherwise - a pointer to the new string.
  */
 
-char *argstostr(int ac, char **av) 
+char *argstostr(int ac, char **av)
 {
-	if (ac == 0 || av == NULL) 
-	{
-		return NULL;
-	}
+	char *new_string = NULL;
+	int k = 0, i = ac, j, sum = 0, temp = 0;
 
-	int totalSize = 0;
-	for (int i = 0; i < ac; i++) 
+	if (ac == 0 || av == NULL)
+		return (NULL);
+
+	while (ac--)
+		sum += (len(av[ac]) + 1);
+	new_string = (char *) malloc(sum + 1);
+
+	if (new_string != NULL)
 	{
-		for (int j = 0; av[i][j] != '\0'; j++) 
+		while (k < i)
 		{
-			totalSize++;
+			for (j = 0; av[k][j] != '\0'; j++)
+				new_string[j + temp] = av[k][j];
+			new_string[temp + j] = '\n';
+			temp += (j + 1);
+			k++;
 		}
-		totalSize++;
+		new_string[temp] = '\0';
 	}
-
-	char *result = (char *) malloc(totalSize * sizeof(char));
-	if (result == NULL) 
+	else
 	{
-		return NULL;
+		return (NULL);
 	}
+	return (new_string);
+}
 
-	int currentIndex = 0;
-	for (int i = 0; i < ac; i++) 
+/**
+ *len - returns length of str
+ *@str: string counted
+ *Return: returns the length
+ */
+int len(char *str)
+{
+	int len = 0;
+
+	if (str != NULL)
 	{
-		for (int j = 0; av[i][j] != '\0'; j++) 
-		{
-			result[currentIndex++] = av[i][j];
-		}
-		result[currentIndex++] = '\n';
+		while (str[len])
+			len++;
 	}
-
-	result[currentIndex] = '\0';
-
-	return result;
+	return (len);
 }
