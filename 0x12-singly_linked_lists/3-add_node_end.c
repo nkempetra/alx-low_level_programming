@@ -6,50 +6,41 @@
  * @str: string to be copied to str member of the linked list
  * Return: pointer to the newly created node
  */
+
 list_t *add_node_end(list_t **head, const char *str)
 {
-	char *dup_str;
-	list_t *new, *last;
+	char *cp;
+	int len;
+	list_t *n, *last;
 
-	new = malloc(sizeof(list_t));
-	if (!new)
+	n = malloc(sizeof(list_t));
+	if (new == NULL)
 		return (NULL);
 
-	dup_str = strdup(str);
-	if (!str)
+	cp = strdup(str);
+	if (str == NULL)
 	{
 		free(new);
 		return (NULL);
 	}
 
-	new->str = dup_str;
-	new->len = _strlen(str);
-	new->next = NULL;
+	for (len = 0; str[len];)
+		len++;
 
-	if (!*head)
-		*head = new;
+	n->str = cp;
+	n->len = len;
+	n->next = NULL;
+
+	if (*head == NULL)
+		*head = n;
 
 	else
 	{
 		last = *head;
-		while (last->next)
+		while (last->next != NULL)
 			last = last->next;
-		last->next = new;
+		last->next = n;
 	}
 
 	return (*head);
-}
-
-/**
- * _strlen - returns the length of a string
- * @s: the string whose length is to be determined
- * Return: the length of s
- */
-int _strlen(const char *s)
-{
-	int j = 0;
-
-	while (*s++)
-		j++;
-	return (j);
 }
