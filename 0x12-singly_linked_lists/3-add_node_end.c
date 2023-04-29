@@ -17,10 +17,10 @@ list_t *add_node_end(list_t **head, const char *str)
 	if (new == NULL)
 		return (NULL);
 
-	cp = strdup(str);
+	cp = strcp(str);
 	if (str == NULL)
 	{
-		free(new);
+		free(n);
 		return (NULL);
 	}
 
