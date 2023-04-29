@@ -9,37 +9,29 @@
 
 list_t *add_node(list_t **head, const char *str)
 {
-	list_t *add;
+	list_t *n;
+	char *dup_str;
+	int len;
 
-	new = malloc(sizeof(list_t));
-	if (pus == NULL)
+	n = malloc(sizeof(list_t));
+	if (n == NULL)
+		return (NULL);
+
+	dup_str = strdup(str);
+	if (dup_str == NULL)
 	{
+		free(n);
 		return (NULL);
 	}
-	pus->str = strdup(str);
-	if (pus->str == NULL)
-	{
-		free(pus);
-		return (NULL);
-	}
-	pus->len = _strlen(str);
-	pus->next = *head;
-	*head = pus;
-	return (*head);
-}
 
-/**
- * _strlen - function to calculate the length of a const char string
- * @s: string to work with
- * Return: length of string.
- */
+	for (len = 0; str[len];)
+		len++;
 
-int _strlen(const char *s)
-{
-	unsigned int j;
+	n->str = dup_str;
+	n->len = len;
+	n->next = *head;
 
-	for (j = 0; s[j] != '\0'; j++)
-	{
-	}
-	return (j);
+	*head = n;
+
+	return (n);
 }
