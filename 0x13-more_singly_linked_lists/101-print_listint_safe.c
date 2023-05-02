@@ -10,7 +10,8 @@
  * Return: pointer to the new list
  */
 
-const listint_t **_realloc_array_ptrs(const listint_t **list, size_t size, const listint_t *new_node)
+const listint_t **_realloc_array_ptrs(const listint_t **list, size_t size,
+		const listint_t *new_node)
 {
 	const listint_t **new_list;
 	size_t i;
