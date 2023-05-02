@@ -5,9 +5,8 @@
  * @head: the pointer to the starting node of the listint_t list
  * @idx: the position where the new node is to be inserted
  * @n: the data to be stored in the new node
- *
  * Return: the address of the new node, or NULL if it failed
- * */
+ */
 
 listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 {

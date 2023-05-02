@@ -4,7 +4,7 @@
  * free_listint2 - function that frees a listint_t list.
  * @head: Head node.
  *
- * Return: void 
+ * Return: void
  */
 
 void free_listint2(listint_t **head)

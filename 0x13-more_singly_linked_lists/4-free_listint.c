@@ -3,7 +3,7 @@
 /**
  * free_listint - function that frees a listint_t list.
  * @head: pointer to the head node
- * 
+ *
  * Return: NULL if error
  */
 
