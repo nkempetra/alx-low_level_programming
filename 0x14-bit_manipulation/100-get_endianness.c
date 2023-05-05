@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * get_endianness - determines if a machine uses little or big endian 
+ * get_endianness - determines if a machine uses little or big endian
  * byte ordering
  *
  * Return: 1 if little endian, 0 otherwise
