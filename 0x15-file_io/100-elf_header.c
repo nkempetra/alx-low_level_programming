@@ -1,3 +1,5 @@
+#include "main.h"
+
 /**
  * print_addr - prints address
  * @ptr: magic.
