@@ -2,10 +2,11 @@
 
 /**
  * main - prints the number of arguments passed.
+ *
  * @argc: number of arguments passed to the program
  * @argv: an array of strings representing the arguments
  *
- * return: 0.
+ * Return: 0 if successful completion
  */
 
 int main(int argc, char *argv[])
